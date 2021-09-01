@@ -9,7 +9,6 @@ export class DataDisplayComponent implements OnInit {
 
   @Input() displayArray:any;    //recived array from parant(data-entry) component
   @Output() displayDataEntryFields = new EventEmitter();
-  example = true;
   value:string;
 
   checkValue(){   //send the value of radio input to the parent(data-entry) component

@@ -29,7 +29,7 @@ export class DataEntryComponent implements OnInit {
     this.inputCity = ""
   }
 
-  recivedData(event){   //recived data of radio button from child(data-display) component
+  receivedData(event){   //received data of radio button from child(data-display) component
     this.displayDataEntryFields = event;
   }
 
