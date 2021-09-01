@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-4">
+        <!-- input fields (UI) -->
+        <form *ngIf = "displayDataEntryFields == 'enabled'; else showMessage">       <!--condition whether show data-entry or not -->
+            <div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Username" [(ngModel)] = "inputUsername">                    
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email" [(ngModel)] = "inputEmail">                    
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea class="form-control" rows="3"  name="add" placeholder="Enter Address" [(ngModel)] = "inputAddress"></textarea>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" name="state" placeholder="Enter State" [(ngModel)] = "inputState">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" name="city" placeholder="Enter City" [(ngModel)] = "inputCity">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="button" (click) = "onClick()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-sm-12">
+      <app-data-display [displayArray] = "inputArray" (displayDataEntryFields) = "recivedData($event)"></app-data-display>      <!--child component-->
+    </div>
+</div>
+
+<ng-template #showMessage>Currently Service is not reachable,Please Try again Later</ng-template>    <!--else condition data-->
